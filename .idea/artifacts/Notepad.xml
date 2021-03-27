@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Notepad">
+    <output-path>$PROJECT_DIR$/out/artifacts/Notepad</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="com.zhihao.main.Main" />
+        <option name="description" value="Notepad 1.0&#13;&#10;Developed by Chen Zhihao" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="nativeBundle" value="all" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="notepad_demo01.jar">
+        <element id="module-output" name="notepad_demo01" />
+      </element>
+    </root>
+  </artifact>
+</component>

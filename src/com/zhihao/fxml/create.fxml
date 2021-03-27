@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="180.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zhihao.controller.CCreate">
+    <children>
+        <Button layoutX="82.0" layoutY="133.0" mnemonicParsing="false" text="保存" onMouseClicked="#save"  />
+        <Button layoutX="209.0" layoutY="133.0" mnemonicParsing="false" text="不保存" onMouseClicked="#noSave"  />
+        <Button layoutX="336.0" layoutY="133.0" mnemonicParsing="false" text="取消" onMouseClicked="#cancel" />
+        <Label alignment="CENTER" layoutX="117.0" layoutY="58.0" prefHeight="20.0" prefWidth="254.0" text="您想要保存更改吗？">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

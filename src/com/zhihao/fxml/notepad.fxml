@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane fx:id="rootLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zhihao.controller.Controller">
+   <children>
+      <MenuBar prefHeight="32.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem fx:id="new" mnemonicParsing="false" onAction="#createNew" text="New" />
+                  <MenuItem fx:id="open" mnemonicParsing="false" onAction="#open" text="Open" accelerator="Ctrl + O" />
+                  <SeparatorMenuItem></SeparatorMenuItem>
+                  <MenuItem fx:id="save" onAction="#save" mnemonicParsing="false" text="Save" accelerator="Ctrl + S" />
+                  <MenuItem fx:id="saveAs" onAction="#saveAs" mnemonicParsing="false" text="Save as" />
+                  <SeparatorMenuItem></SeparatorMenuItem>
+                  <MenuItem fx:id="print" disable="true" mnemonicParsing="false" text="Print" />
+                  <MenuItem fx:id="exit" onAction="#exit" mnemonicParsing="false" text="Exit" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem fx:id="Undo" onAction="#Undo" mnemonicParsing="false" text="Undo" disable="true" accelerator="Ctrl + Z" />
+                  <MenuItem fx:id="Redo" onAction="#Redo" mnemonicParsing="false" text="Redo" disable="true" accelerator="Ctrl + Y" />
+                  <SeparatorMenuItem></SeparatorMenuItem>
+                  <MenuItem fx:id="Cut" onAction="#Cut" mnemonicParsing="false" text="Cut" disable="true" accelerator="Ctrl + X" />
+                  <MenuItem fx:id="Copy" onAction="#Copy" mnemonicParsing="false" text="Copy" disable="true" accelerator="Ctrl + C" />
+                  <MenuItem fx:id="Paste" onAction="#Paste" mnemonicParsing="false" text="Paste" accelerator="Ctrl + V" />
+                  <MenuItem fx:id="Delete" onAction="#Delete" mnemonicParsing="false" text="Delete" disable="true" accelerator="Delete" />
+                  <SeparatorMenuItem></SeparatorMenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#selectAll" text="Select All" accelerator="Ctrl + A" />
+                  <MenuItem fx:id="FindAndReplace" onAction="#findAndReplace" mnemonicParsing="false" text="Find And Replace..." accelerator="Ctrl + H" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="View">
+               <items>
+                  <RadioMenuItem fx:id="wordWrap" mnemonicParsing="false" onAction="#wordWrap" text="Word Wrap" />
+                  <RadioMenuItem mnemonicParsing="false" text="Truncation" />
+                  <SeparatorMenuItem></SeparatorMenuItem>
+                  <MenuItem onAction="#setTextFont" mnemonicParsing="false" text="Font..." />
+                  <MenuItem onAction="#setFontColor" mnemonicParsing="false" text="Color..." />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem onAction="#viewHelp" mnemonicParsing="false" text="View Help..." />
+                  <MenuItem onAction="#aboutNotePad" mnemonicParsing="false" text="About Notepad..." />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <TextArea fx:id="inputTextArea" style="" onMouseClicked="#refreshPosition" onKeyReleased="#refreshPosition" onDragDetected="#setUsable" wrapText="false" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="32" />
+      <Label fx:id="row_column_label" alignment="CENTER_RIGHT" layoutX="26.0" text="第 1 行，第 1 列" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="20">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="26.0" text="" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0"></Label>
+   </children>
+</AnchorPane>
