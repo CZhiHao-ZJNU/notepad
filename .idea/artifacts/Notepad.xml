@@ -16,6 +16,8 @@
       <element id="archive" name="notepad_demo01.jar">
         <element id="module-output" name="notepad_demo01" />
       </element>
+      <element id="file-copy" path="$PROJECT_DIR$/../../../jarPackage/junit/hamcrest-core-1.1.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/../../../jarPackage/junit/junit-4.12.jar" />
     </root>
   </artifact>
 </component>

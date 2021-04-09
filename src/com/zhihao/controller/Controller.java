@@ -16,7 +16,6 @@ import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -43,6 +42,7 @@ public class Controller {
     private final static int SAVE = 2;
     private Stack<String> undoStack;
     private Stack<String> redoStack;
+    private String startContent = "";
     private final KeyCombination keyCombCtrZ = new KeyCodeCombination(KeyCode.Z, KeyCombination.SHORTCUT_DOWN);
     private final KeyCombination keyCombCtrY = new KeyCodeCombination(KeyCode.Y, KeyCombination.SHORTCUT_DOWN);
     private final KeyCombination keyCombCtrH = new KeyCodeCombination(KeyCode.H, KeyCombination.SHORTCUT_DOWN);
@@ -156,6 +156,9 @@ public class Controller {
             }
             inputTextArea.setText(sb.toString());
             this.stage.setTitle(String.format(stageTitle,this.file.getName()));
+            this.startContent = sb.toString();
+            this.clearUndoRedoStack();
+            this.setUndoRedoAvailable();
         } catch (IOException e) {
             e.printStackTrace();
         } catch (NullPointerException e) {
@@ -201,7 +204,7 @@ public class Controller {
             String top = undoStack.pop();
             redoStack.push(top);
             if (undoStack.empty()) {
-                inputTextArea.setText("");
+                inputTextArea.setText(startContent);
             } else {
                 inputTextArea.setText(undoStack.peek());
             }
@@ -281,6 +284,13 @@ public class Controller {
     private void wordWrap(){
         boolean isWrapText = inputTextArea.isWrapText();
         inputTextArea.setWrapText(!isWrapText);
+    }
+
+    @FXML
+    private void truncation() {
+       if(inputTextArea.isWrapText()) {
+
+       }
     }
 
     @FXML
@@ -376,6 +386,8 @@ public class Controller {
             if (stage.getTitle().matches("^\\*.+")) {
                 stage.setTitle(stage.getTitle().substring(1));
             }
+            this.startContent = inputTextArea.getText();
+            this.clearUndoRedoStack();
         } catch (NullPointerException e) {
             return;
         } catch (IOException e) {
@@ -447,5 +459,13 @@ public class Controller {
 
     public TextArea getInputTextArea() {
         return inputTextArea;
+    }
+
+    public String getStartContent() {
+        return startContent;
+    }
+
+    public void setStartContent(String startContent) {
+        this.startContent = startContent;
     }
 }

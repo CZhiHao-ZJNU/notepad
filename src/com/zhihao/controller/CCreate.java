@@ -54,6 +54,7 @@ public class CCreate {
         inputTextArea.setText("");
         parentStage.setTitle("无标题 - 记事本");
         controller.setFile(null);
+        controller.setStartContent("");
         controller.clearUndoRedoStack();
     }
 }
